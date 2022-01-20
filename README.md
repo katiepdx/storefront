@@ -33,3 +33,18 @@
 - Find virtualenv python interpreter path: In terminal run -- `pipenv --venv`
   - This returns: `path/to/virtualenvs/project-virtualenv`
   - When adding it to VSCode, need to add `.../bin/python` to the end of the path. Example: `path/to/virtualenvs/project-virtualenv/bin/python`
+
+# Creating a New App
+- `python manage.py startapp <new-app-name>`
+- This will create a new directory called `playground` at the same level as `storefront` app, at the base of the file tree.
+- *Register new app* in projects `settings.py` module: 
+  - In the storefront project folder: go to `settings.py`: 
+  - `INSTALLED_APPS`: After the list of Django's apps, add the newly created app (`storefront`). 
+
+## Django App Structure
+- `migrations` folder: used for generating database tables
+- `admin.py` module: admin interface
+- `apps.py` module: for defining the app
+- `models.py` module: used for building model classes for the app that are used for getting data for the user
+- `tests.py` module: unit tests
+- `views.py` module: controllers/business logic. Request handler. 
