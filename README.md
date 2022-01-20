@@ -25,3 +25,11 @@
   ```
 - Active virtual environment: `pipenv shell`
 - Exit virtual environment: `control^ + D` 
+
+## VSCode and Python
+- Setup steps so VSCode integrated terminal starts virtual environment on open (`control^ + backtick`)
+- Open `Command Pallette` and search for `Python Interpreter`
+- Python Interpreter is default set to the globally installed python interpreter. Need to select the python interpreter in the virtual environment (for this project). Enter the path here. `Current: ~/path/to/python/interpreter/in/virtual/env`
+- Find virtualenv python interpreter path: In terminal run -- `pipenv --venv`
+  - This returns: `path/to/virtualenvs/project-virtualenv`
+  - When adding it to VSCode, need to add `.../bin/python` to the end of the path. Example: `path/to/virtualenvs/project-virtualenv/bin/python`
