@@ -36,6 +36,17 @@
   - This returns: `path/to/virtualenvs/project-virtualenv`
   - When adding it to VSCode, need to add `.../bin/python` to the end of the path. Example: `path/to/virtualenvs/project-virtualenv/bin/python`
 
+## VSCode Python Formatter
+- Followed this article: https://dev.to/adamlombard/how-to-use-the-black-python-code-formatter-in-vscode-3lo0
+- Go to vscode settings (`command + ,`)
+- Search for: `python formatting provider` and select `black` from the dropdown
+- Select option for when to format (ex. `format on save)`
+- On first format, if `black` is not installed, VSCode will prompt you to download it. Can download using the VScode prompt or it by opening the project's virtual environment (`pipenv shell`) and entering: `pipenv install black`.
+- Run `black` formatter for a file or entire project by running `black [file or directory]`
+  - Article source: https://www.geeksforgeeks.org/python-code-formatting-using-black/
+  - Ex. Open project virtual environment `pipenv shell` and run `black .` to run all files through black's formatter.
+  - Note: Cannot change `black`s formatting. 
+
 # Creating a New App
 - `python manage.py startapp <new-app-name>`
 - This will create a new directory called `playground` at the same level as `storefront` app, at the base of the file tree.
