@@ -51,6 +51,7 @@
 - `tests.py` module: unit tests
 - `views.py` module: controllers/business logic. Request handler. 
 
+# URLs - Views - Templates
 ## URLConf
 - one main `urls.py` where urls matching a certain pattern can be routed to a specific apps `urls.py` module.
 - urls convention END with a `/`. Ex: `playground/hello/`
@@ -75,3 +76,32 @@
   <p>Otherwise do this</p>
   {% endif %}
   ```
+
+# Debugging in VSCode
+## Setup VSCode Debugger (first time setup for a project)
+- Open `Run and Debug` by clicking the bug with the play triangle (or `command + shift + D`).
+  - Note: the first time this is opened, you will be prompted to create a `launch.json` file. This file lives in the `.vscode` folder. Select `python` --> `django`. This will auto generate a launch.json file that will be used to tell VSCode how to run debugger.
+- `launch.json` args (port overlap): debugger default runs on port 8000 which is being used by storefront project. Can pass a port number (as a string) as a second item in list under `args` in launch.json to specify a different port. 
+## Start Debugger
+- Add red vscode breakpoint by clicking left of the line number.
+- Click green button in `run and debug` to start debugger. It will continue until it hits a red vscode breakpoint. 
+  - *Possible Error*: If you see an `ImportError`, could possibility be a VSCode interpreter issue. Try setting up the python interpreter again. Resource: https://oraclefrontovik.com/2021/08/19/exception-has-occurred-importerror-couldnt-import-django-when-debugging-django-with-vs-code/
+- Debug server should start on specified port. Open Chrome/browser and go to local host at that port, and hit the endpoint that has the debugger
+- `Run and Debug` Sections: 4 dropdowns
+  - Can see Local variables in the 1st dropdown
+  - Can add/view variables to watch in the 2nd dropdown
+  - Can view call stack in 3rd dropdown
+  - Can view/add/remove breakpoints in 4th dropdown
+- Debugger Options:
+  - Continue: continue all the way through or until next debugger
+  - Step Over: step over entire function
+  - Step Into: execute line by line
+  - Stop Over: exit the current function the breakpoint is in
+  - Restart: restart debugger (need to refresh page/hit the endpoint the debugger is in again)
+  - Stop/Disconnect from debugger
+- Note: Remove breakpoints once done
+
+## VSCode Run App Shortcuts:
+- Run WITHOUT Debugger: `control + F5`
+- Run WITH Debugger: `F5`
+- Note: This can also be found in VSCode top menu bar under `Run`.
