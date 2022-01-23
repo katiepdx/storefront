@@ -24,7 +24,9 @@
          ^
   ```
 - Active virtual environment: `pipenv shell`
-- Exit virtual environment: `control^ + D` 
+- Exit virtual environment: `control^ + D`
+- View installed packages: `pip list`
+- Install all dependencies in virtual environment: `pipenv install`
 
 ## VSCode and Python
 - Setup steps so VSCode integrated terminal starts virtual environment on open (`control^ + backtick`)
@@ -48,3 +50,7 @@
 - `models.py` module: used for building model classes for the app that are used for getting data for the user
 - `tests.py` module: unit tests
 - `views.py` module: controllers/business logic. Request handler. 
+
+## URLConf
+- one main `urls.py` where urls matching a certain pattern can be routed to a specific apps `urls.py` module.
+- urls convention END with a `/`. Ex: `playground/hello/`
