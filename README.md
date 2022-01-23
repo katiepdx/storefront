@@ -105,3 +105,21 @@
 - Run WITHOUT Debugger: `control + F5`
 - Run WITH Debugger: `F5`
 - Note: This can also be found in VSCode top menu bar under `Run`.
+
+## Django Debug Toolbar
+- Docs: https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+- Install Django Debug Toolbar & Setup: 
+  - We want to install it in the project's virtual environment. To do so, activate virtual environment: open vscode integrated terminal OR enter `pipenv shell` in terminal
+  - Install in Virtual Environment: `python -m pip install django-debug-toolbar` or `pipenv install django-debug-toolbar`
+  - Check installation list: `pip list`
+  - Add `debug_toolbar` (for django-debug-toolbar) to list of `INSTALLED_APPS` in project apps. This is under `settings.py` module in project folder.
+  - Add new url pattern in the project's main URLConf module -- `path('__debug__/', include('debug_toolbar.urls')),`
+  - Add to `MIDDLEWARE` in `settings.py` module: goes between django's `request/response` cycle. 
+  - Add IP Address to `INTERNAL_IPS` list if it exists in `settings.py` module. This does not exist by default in a new django project. If it does not exist, add the entire list with the internal IP. This can go anywhere in the `settings.py` file.
+- Start Django Debug Toolbar:
+  - Go page in the browser
+  - Note: django debug toolbar will only appear if the page returns a *proper* html document. Needs at least `<html><body> template logic </html></body>`
+- Django Debug Toolbar will appear on the right in the browser:
+  - Tool bar sections
+    - History, versions, time, settings, headers, etc.
+    - Note: SQL Panel: Can view queries sent to the database from Django here.
