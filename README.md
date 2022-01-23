@@ -54,3 +54,24 @@
 ## URLConf
 - one main `urls.py` where urls matching a certain pattern can be routed to a specific apps `urls.py` module.
 - urls convention END with a `/`. Ex: `playground/hello/`
+
+## Views --> Django Templates
+- Django Template Engine: Default template engine can be replaced with a template engine of your choice.
+- View function can return a template (.html).
+- Django template can be passed variables from the views function as a dictionary object (3rd argument in the `render` function)
+- Views `render` function takes 3 parameters: `request`, `template name as a string`, `variables to pass to the template`.
+- Templates use the passed variables by surrounding the variable in double curlies: ex. `{{ variable_key_from_dictionary }}`
+- Templates can conditionally render parts of the template using `if` and `if/else` statements. 
+  ```
+  {% comment %}
+  <!-- Example Comment: -->
+  <!-- This comment will not be rendered -->
+  <!-- More on Django templates: https://docs.djangoproject.com/en/4.0/topics/templates/ -->
+  {% endcomment %}
+
+  {% if abc %}
+  <p>Do this</p>
+  {% else %}
+  <p>Otherwise do this</p>
+  {% endif %}
+  ```
